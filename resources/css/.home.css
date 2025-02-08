@@ -1,0 +1,339 @@
+:root {
+    --bg-black-900: #f2f2fc;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900: #302e4d;
+    --text-black-700: #504e70;
+    --shadow-color: #3c3939;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body {
+    line-height:1.5;
+    font-size: 16px;
+    font-family: 'Poppins' sans-serif;
+}
+
+::before,::after {
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 200px;
+    background: var(--bg-black-100);
+    position:fixed;
+    left:0;
+    top:0;
+    padding: 30px;
+    height: 100%;
+    border-right: 1px solid var(--bg-black-50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+/* Logo */
+.navbar .logo{
+    position: absolute;
+    top: 50px;
+    font-size: 50px;
+    text-transform: capitalize;
+}
+
+.navbar .logo a{
+    color: var(--text-black-900);
+    font-weight: 700;
+    padding: 15px 20px;
+    letter-spacing: 5px;
+    font-family: "Roboto";
+    font-size: 25px;
+    position: relative;
+}
+.navbar .logo a span{
+    font-family: "Mrs Saint Delafield";
+    font-size: 50px;
+}
+
+.navbar .logo a::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid var(--skin-color);
+    border-left: 5px solid var(--skin-color);
+    bottom: 0;
+    left: 0;
+}
+
+.navbar .logo a::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: 5px solid var(--skin-color);
+    border-right: 5px solid var(--skin-color);
+    top: 0;
+    right: 0;
+}
+/* Toggle */
+.navbar .nav-toggler {
+    height: 40px;
+    width: 45px;
+    border: 1px solid var(--bg-black-50);
+    cursor: pointer;
+    position: fixed;
+    left: 300px;
+    top: 20px;
+    border-radius: 5px;
+    background: var(--bg-black-100);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .nav-toggler span{
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    display: inline-block;
+    position: relative;
+}
+
+.navbar .nav-toggler span::before {
+    content: '';
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    position: absolute;
+    top: -6px;
+    left: 0;
+}
+
+.navbar .nav-toggler span::after {
+    content: '';
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+/* Navigation List */
+.navbar .nav {
+    margin-top: 50px;
+}
+
+.navbar .nav li {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.navbar .nav li a{
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    padding: 5px 15px;
+}
+
+.navbar .nav li a.active{
+    color: var(--skin-color);
+}
+
+.navbar .nav li a .icon {
+    margin-right: 15px;
+}
+
+/* Main Content */
+.main-content {
+    position: fixed;
+    left: 200px;
+    width: 100%;
+    height: 100%;
+}
+
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    top:0;
+    right:0;
+    z-index:0;
+    opacity:1;
+    padding: 0 2rem 2rem;
+    align-items: center;
+    color: var(--text-black-900);
+}
+
+.home .container {
+    width: 100%;
+    margin: auto;
+}
+
+.home .container .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home .home-info {
+    max-width: 40rem;
+}
+
+.home-info h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.home-info h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: .3rem;
+    color: var(--skin-color);
+}
+
+
+.home-info p {
+    font-size: 1.3rem;
+}
+
+.home-info .social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border: .2rem solid var(--skin-color);
+    border-radius: 50%;
+    box-shadow: 0 .2rem .5rem var(--shadow-color);
+    font-size: 2rem;
+    color: var(--skin-color);
+    margin: 1rem .5rem 3rem;
+    transition: .5s ease;
+}
+
+.home-info .social-media a:hover {
+    background: var(--skin-color);
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--skin-color);
+    border-radius: 1rem;
+    border: .2rem solid transparent;
+    box-shadow: 0 .2rem .5rem var(--shadow-color);
+    font-size: 1.6rem;
+    color: #fff;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover{
+    background: #fff;
+    border: .2rem solid var(--skin-color);
+    color: var(--skin-color);
+}
+
+.home .profession-container {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 120vh;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.home .profession-container .profession-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vh;
+    height: 100vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: professionRotate 13s ease-out infinite;
+}
+
+@keyframes professionRotate {
+    0%, 20% {
+        transform: rotate(0deg);
+    }
+    33.33%, 53.33% {
+        transform: rotate(-120deg);
+    }
+    66.66%, 86.66% {
+        transform: rotate(-240deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.home .profession-box .profession {
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--skin-color);
+    transform: rotate(calc(360deg / 3 * var(--i)));
+    transform-origin: 384px;
+    background: var(--bg-black-900);
+    padding: 13px 0;
+}
+
+.home .profession-box .profession:nth-child(2) {
+    padding-left: 20px;
+} 
+
+.home .profession-box .profession .icon{
+    font-size: 3rem;
+}
+
+.home .profession-box .profession h3 {
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.home .profession-box .circle{
+    width: 500px;
+    height: 500px;
+    border: 3px solid purple;
+    border-radius: 50%;
+}
+
+.home .profession-container .overlay {
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 400px solid var(--skin-color);
+    border-left: 384px solid transparent;
+    border-right: 384px solid var(--skin-color);
+    border-bottom: 400px solid var(--skin-color);
+}
+
+.home .home-img .img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    pointer-events: none;
+}
