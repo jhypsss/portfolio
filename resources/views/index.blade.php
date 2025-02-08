@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <!-- Color Switcher -->
+    <link rel="stylesheet" href="{{ url('skins/color-1.css')}}" class="alternate-style" title="color-1">
+    <link rel="stylesheet" href="{{ url('skins/color-2.css')}}" class="alternate-style" title="color-2" disabled>
+    <link rel="stylesheet" href="{{ url('skins/color-3.css')}}" class="alternate-style" title="color-3" disabled>
+    <link rel="stylesheet" href="{{ url('skins/color-4.css')}}" class="alternate-style" title="color-4" disabled>
+    <link rel="stylesheet" href="{{ url('skins/color-5.css')}}" class="alternate-style" title="color-5" disabled>
+
 </head>
-<body>
+<body class="dark">
 
     <header class="navbar">
         <div class="logo">
-            <a href=""> <span>T</span>rick</a>
+            <a href=""> <span>T</span>rixx</a>
         </div>
         <div class="nav-toggler">
             <span></span>
@@ -44,7 +52,7 @@
                         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="#"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    <a href="" class="btn">Contact Me</a>
+                    <a href="#contact" class="btn">Contact Me</a>
                 </div>
 
                 
@@ -84,7 +92,7 @@
                 <div class="about-content">
                     <h2 class="heading">About <span>Me</span></h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil recusandae, omnis, dicta molestias aspernatur est similique nam ipsa praesentium reprehenderit doloribus, neque mollitia optio cumque ratione vel deserunt. Atque tempora dolorum quibusdam omnis magni repudiandae neque dolorem expedita quis ut?</p>
-                    {{-- <a href="" class="btn">Download CV</a> --}}
+                    <a href="" class="btn">Download CV</a>
                 </div>
                 <div class="about-details">
                     <div class="education">
@@ -157,44 +165,84 @@
                 <div class="testimonial-container">
                     <h2 class="heading">Valueable <span>Testimonial</span></h2>
                     <div class="testimonial-wrapper">
-                        <div class="testimonial-box">
-                            <div class="testimonial-content">
-                                <div class="testimonial-slide">
+                        <div class="testimonial-box mySwiper">
+                            <div class="testimonial-content swiper-wrapper">
+                                <div class="testimonial-slide swiper-slide">
                                     <img src="{{ url('images/testimonial1.png')}}" alt="">
                                     <h3>Klee</h3>
                                     <p>I like things that are fluffy~! Like Dodoco! And dandelions! And Razor's hair!</p>
                                 </div>
                             
-                                <div class="testimonial-slide">
+                                <div class="testimonial-slide swiper-slide">
                                     <img src="{{ url('images/testimonial2.png')}}" alt="">
                                     <h3>Hitori "Bocchi" Gotoh</h3>
                                     <p>Maybe even someone like me can shine</p>
                                 </div>
                             
-                                <div class="testimonial-slide">
+                                <div class="testimonial-slide swiper-slide">
                                     <img src="{{ url('images/testimonial3.png')}}" alt="">
                                     <h3>Wednesday</h3>
                                     <p>I’m not friend material, let alone more-than-friend material. I will ignore you, stomp on your heart, and always put my needs and interests first.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="controls">
-                            <button id="prev" class="control-btn">Prev</button>
-                            <button id="next" class="control-btn">Next</button>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            
-
-            <section class="contact" id="contact" style="display:none;">
+            <section class="contact" id="contact">
                 <div class="contact-content">
+                    <h2 class="heading">Contact <span>Me!</span></h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <input name="" type="text" placeholder="Name">
+                        </div>
+                        <div class="input-box">
+                            <input name="" type="email" placeholder="Email">
+                        </div>
+                        <div class="input-box">
+                            <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                        </div>
+                        <input type="submit" value="Send Message" class="btn">
+                    </form>
                 </div>
             </section>
+
+            <footer class="footer">
+                <div class="footer-text">
+                    <p>Copyright &copy; 2025 by Trick Torres</p>
+                </div>
+
+                <div class="footer-iconTop">
+                    <a href="#home"><i class="icon fa-solid fa-arrow-up"></i></a>
+                </div>
+            </footer>
 
         </div>
     </div>
 
+    <div class="style-switcher">
+        <div class="style-switcher-toggler s-icon">
+            <i class="icon fa-solid fa-gear fa-spin"></i>
+        </div>
+        <div class="day-night s-icon">
+            <i class="icon fa fa-moon"></i>
+            {{-- <i class="fa-solid fa-sun"></i> --}}
+        </div>
+        <h4>Theme Colors</h4>
+        <div class="colors">
+            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
